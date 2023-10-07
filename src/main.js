@@ -1,5 +1,5 @@
 // Массив имен файлов изображений
-const imageNames = ['image1.png', 'image2.png', 'image3.png', 'image4.jpeg', 'image5.jpeg', 'image6.jpeg', 'image7.jpeg'];
+const imageNames = ['image4.jpeg', 'image5.jpeg', 'image6.jpeg', 'image7.jpeg'];
 
 // Получаем контейнер, куда будем добавлять изображения
 const imageListContainer = document.getElementById('image-list');

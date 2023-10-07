@@ -23,7 +23,7 @@ imageNames.forEach((imageName, index) => {
 
 // Инициализируем Swiper после создания всех слайдов
 const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 3, // Количество видимых слайдов
+  slidesPerView: 1, // Количество видимых слайдов
   spaceBetween: 10,
   navigation: {
     nextEl: '.swiper-button-next',

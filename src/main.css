@@ -1,0 +1,23 @@
+.swiper-container {
+  width: 1500px;
+  /* Ширина карусели */
+  margin: 0 auto;
+  /* Центрирование по горизонтали */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  /* Ширина карточки */
+  height: 100px;
+  /* Высота карточки */
+}
+
+.image-container img {
+  max-width: 100%;
+  /* Изображение не будет превышать размер карточки */
+  max-height: 100%;
+  /* Изображение не будет превышать размер карточки */
+}

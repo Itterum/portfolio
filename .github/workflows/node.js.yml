@@ -21,17 +21,6 @@ jobs:
         run: npm ci
       - run: npm run build
       - run: npm test
-
-  # Deployment job
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Get repository code
-        uses: actions/checkout@v3
-      - name: Print Working Directory
-        run: pwd
-
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:

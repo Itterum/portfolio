@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -40,7 +40,7 @@ jobs:
     - name: Set up Git
       run: |
         git config --global user.email "itterum@proton.me"
-        git config --global user.name "itterum"
+        git config --global user.name "Itterum"
 
     - name: Deploy to GitHub Pages
       run: npm run deploy

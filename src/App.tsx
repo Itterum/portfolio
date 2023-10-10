@@ -141,7 +141,7 @@ function App() {
       <h2>Desciption:</h2>
       <ul>
         {items.slice(0, 5).map((item) => (
-          <li>
+          <li key={item.id}>
             {item.title}
           </li>
         ))}

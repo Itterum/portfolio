@@ -36,7 +36,12 @@ jobs:
           ${{ runner.os }}-node-
     - run: npm run build
     - run: npm test
-    
+
+    - name: Set up Git
+      run: |
+        git config --global user.email "itterum@proton.me"
+        git config --global user.name "itterum"
+
     - name: Deploy to GitHub Pages
       run: npm run deploy
       env:

@@ -20,18 +20,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Git
-        run: |
-          git config --global user.email "itterum@proton.me"
-          git config --global user.name "Itterum"
       - name: Get repository code
         uses: actions/checkout@v3
       - name: Install dependecies
         run: npm ci
       - run: npm run build
       - run: npm test
-      - name: Deploy to GitHub Pages
-        run: npm run deploy
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
-          CI: false
-        if: success() # Выполнять только при успешной сборке
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

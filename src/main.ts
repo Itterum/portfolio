@@ -4,7 +4,7 @@ import { createButton } from "@components/button";
 const header = document.querySelector('header');
 
 const h1 = createHeader();
-const myButton = createButton('Нажми меня!', () => {
+const myButton = createButton('Нажми меня!!!', () => {
   alert('Кнопка была нажата');
 });
 

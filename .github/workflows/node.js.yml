@@ -30,14 +30,18 @@ jobs:
       - name: Building project
         run: npm run build
 
-      # - name: Running tests
-      #   run: npm run test
+      - name: Copying files to artifacts
+        run: |
+          mkdir artifacts
+          cp -r dist artifacts/
+          cp -r src/styles artifacts/
+          cp index.html artifacts/
 
       - name: Uploading production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: ./artifacts
 
   deploy:
     name: Deploy
@@ -50,10 +54,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: ./artifacts
 
       - name: Deploying to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./artifacts

@@ -12,9 +12,6 @@
   "license": "ISC",
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
-    "file-loader": "^6.2.0",
-    "html-loader": "^4.2.0",
-    "style-loader": "^3.3.3",
     "ts-loader": "^9.5.0",
     "tsc-watch": "^6.0.4",
     "typescript": "^5.2.2",

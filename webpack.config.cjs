@@ -30,6 +30,7 @@ module.exports = {
         { from: 'index.html', to: 'index.html' }, // Копируем index.html в корень dist
         { from: 'src/images', to: 'src/images' }, // Копируем содержимое папки images в dist/images
         { from: 'src/styles', to: 'src/styles' }, // Копируем содержимое папки styles в dist/styles
+        { from: 'src/icons', to: 'src/icons' }, // Копируем содержимое папки icons в dist/icons
       ],
     }),
   ],

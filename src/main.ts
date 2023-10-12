@@ -1,34 +1,45 @@
-import { createHeader } from "@components/header";
-import { createButton } from "@components/button";
+/* Задания на урок:
 
-const header = document.querySelector('header');
+1) Удалить все рекламные блоки со страницы (правая часть сайта)
 
-const h1 = createHeader();
-const myButton = createButton('Нажми меня!!!', () => {
-  alert('Кнопка была нажата');
-});
+2) Изменить жанр фильма, поменять "комедия" на "драма"
 
-header?.appendChild(h1);
-header?.appendChild(myButton);
+3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
+Реализовать только при помощи JS
 
-const parallax = document.querySelector(".parallax") as HTMLElement;
-const circles = document.querySelectorAll(".circle") as NodeListOf<HTMLElement>;
+4) Список фильмов на странице сформировать на основании данных из этого JS файла.
+Отсортировать их по алфавиту 
 
-parallax.addEventListener("mousemove", (e) => {
-  const { clientX, clientY } = e;
-  const centerX = parallax.offsetWidth / 2;
-  const centerY = parallax.offsetHeight / 2;
+5) Добавить нумерацию выведенных фильмов */
 
-  circles.forEach((circle, index) => {
-    const depth = index + 1;
-    const xOffset = (clientX - centerX) * depth * 0.02;
-    const yOffset = (clientY - centerY) * depth * 0.02;
-    circle.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-  });
-});
+const movieDB = {
+  movies: [
+    "Логан",
+    "Лига справедливости",
+    "Ла-ла лэнд",
+    "Одержимость",
+    "Скотт Пилигрим против..."
+  ]
+};
 
-parallax.addEventListener("mouseleave", () => {
-  circles.forEach((circle) => {
-    circle.style.transform = "translate(0, 0)";
-  });
-});
+// 1
+const adsBloc = document.querySelectorAll('.promo__adv img');
+adsBloc?.forEach(img => img.remove());
+
+// 2
+const genre = document.querySelector('.promo__genre');
+if (genre) genre.textContent = 'драма';
+
+// 3
+const background = document.querySelector('.promo__bg') as HTMLElement;
+if (background) background.style.backgroundImage = "url('src/images/bg.jpg')";
+
+// 4-5
+const filmList = document.querySelector('.promo__interactive-list');
+const listItems = filmList?.querySelectorAll('li');
+movieDB.movies.sort();
+movieDB.movies.forEach((title, index) => {
+  if (listItems) {
+    listItems[index].textContent = `${index + 1}. ${title}`;
+  }
+})

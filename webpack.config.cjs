@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -22,6 +23,16 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    // Добавьте экземпляр CopyWebpackPlugin
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'index.html', to: 'index.html' }, // Копируем index.html в корень dist
+        { from: 'src/images', to: 'src/images' }, // Копируем содержимое папки images в dist/images
+        { from: 'src/styles', to: 'src/styles' }, // Копируем содержимое папки styles в dist/styles
+      ],
+    }),
+  ],
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),

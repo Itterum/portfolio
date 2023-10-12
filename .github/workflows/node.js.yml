@@ -33,9 +33,7 @@ jobs:
       - name: Copying files to artifacts
         run: |
           mkdir artifacts
-          cp -r dist artifacts/
-          cp -r src/styles artifacts/
-          cp index.html artifacts/
+          cp -r dist/ artifacts/
 
       - name: Uploading production-ready build files
         uses: actions/upload-artifact@v3

@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "lit-html": "^3.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.8"
+  },
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2"
   }
 }

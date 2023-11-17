@@ -1,19 +1,18 @@
 {
-  "name": "vite-typescript-starter",
+  "name": "vite-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
-  "devDependencies": {
-    "lit-html": "^3.0.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.8"
-  },
   "dependencies": {
-    "materialize-css": "^1.0.0-rc.2"
+    "solid-js": "^1.8.5"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-solid": "^2.7.2"
   }
 }

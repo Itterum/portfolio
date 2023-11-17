@@ -1,3 +1,6 @@
-export default {
-  base: '/portfolio/',
-}
+import { defineConfig } from 'vite'
+import solid from 'vite-plugin-solid'
+
+export default defineConfig({
+  plugins: [solid()],
+})

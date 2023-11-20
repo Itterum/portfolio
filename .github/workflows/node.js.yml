@@ -49,6 +49,8 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+      - name: List files in dist
+        run: ls -R dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action

@@ -71,6 +71,8 @@ header {
 }
 
 .icon {
+  /* width: 80px;
+  width: 80px; */
   position: relative;
   left: -1.8em;
   cursor: pointer;

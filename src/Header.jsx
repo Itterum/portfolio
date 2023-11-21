@@ -6,10 +6,10 @@ import {
   Box,
   IconButton,
   Toolbar,
-  Avatar,
   Modal,
 } from "@suid/material";
 import { createSignal } from "solid-js";
+import AccountMenu from "./AccountMenu";
 
 const SearchContainer = styled("div")({
   display: "flex",
@@ -86,7 +86,7 @@ function Header() {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2, width: 41, height: 41 }}
             onClick={handleOpen}
           >
             <MenuIcon />
@@ -97,7 +97,8 @@ function Header() {
               <SearchIcon />
             </SearchButton>
           </SearchContainer>
-          <Avatar alt="Profile" src="avatar.svg" />
+          {/* <Avatar alt="Profile" src="avatar.svg" /> */}
+          <AccountMenu />
         </Toolbar>
       </StyledAppBar>
     </Box>

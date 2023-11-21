@@ -1,36 +1,72 @@
-import './App.css'
-import './Header.css'
-import axios from 'axios'
+import styled from "@suid/system/styled";
+import MenuIcon from "@suid/icons-material/Menu";
+import SearchIcon from "@suid/icons-material/Search";
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Toolbar,
+  Avatar,
+} from "@suid/material";
+
+const SearchContainer = styled("div")({
+  display: "flex",
+  alignItems: "center",
+  backgroundColor: "aliceblue",
+  padding: 8,
+  borderRadius: 20,
+  outline: 0,
+  border: 0,
+  margin: "0 auto",
+  width: "800px",
+  height: "25px",
+  position: "relative",
+});
+
+const MyComponent = styled("input")({
+  color: "darkslategray",
+  backgroundColor: "transparent",
+  outline: 0,
+  border: 0,
+  width: "100%",
+  marginRight: "40px", // Добавляем отступ справа для кнопки поиска
+});
+
+const SearchButton = styled(IconButton)({
+  position: "absolute",
+  right: 0,
+  color: "black", // Устанавливаем цвет кнопки поиска
+});
+
+const StyledAppBar = styled(AppBar)({
+  backgroundColor: "black",
+});
 
 function Header() {
-  const handleClick = async () => {
-    try {
-      const response = await axios.get('ваш_путь_к_API')
-      console.log(response.data)
-    } catch (error) {
-      console.error('Ошибка при выполнении запроса:', error)
-    }
-  }
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    handleClick();
-  };
-
   return (
-    <>
-      <header>
-        <div className="menu-container">
-          <div class="burger-menu" role="button"></div>
-        </div>
-        <form class="custom-input" action="/" method="get" onSubmit={handleSubmit} noValidate>
-          <input class="search" placeholder="" />
-          <span type="button" class="icon fa fa-search" onClick={handleClick} />
-        </form>
-        <div class="profile-icon" role="button"></div>
-      </header>
-    </>
-  )
+    <Box sx={{ flexGrow: 1 }}>
+      <StyledAppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <SearchContainer>
+            <MyComponent placeholder="Search…" />
+            <SearchButton>
+              <SearchIcon />
+            </SearchButton>
+          </SearchContainer>
+          <Avatar alt="Profile" src="avatar.svg" />
+        </Toolbar>
+      </StyledAppBar>
+    </Box>
+  );
 }
 
-export default Header
+export default Header;

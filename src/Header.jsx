@@ -7,7 +7,9 @@ import {
   IconButton,
   Toolbar,
   Avatar,
+  Modal,
 } from "@suid/material";
+import { createSignal } from "solid-js";
 
 const SearchContainer = styled("div")({
   display: "flex",
@@ -27,12 +29,12 @@ const SearchContainer = styled("div")({
 });
 
 const MyComponent = styled("input")({
-  color: "darkslategray",
+  color: "#292727",
   backgroundColor: "transparent",
   outline: 0,
   border: 0,
   width: "100%",
-  // marginRight: "40px",
+  fontSize: "18px",
 });
 
 const SearchButton = styled(IconButton)({
@@ -40,16 +42,43 @@ const SearchButton = styled(IconButton)({
   right: 0,
   top: "50%",
   transform: "translateY(-50%)",
-  color: "black",
+  color: "#292727",
 });
 
 const StyledAppBar = styled(AppBar)({
-  backgroundColor: "black",
+  backgroundColor: "#292727",
 });
 
 function Header() {
+  const [open, setOpen] = createSignal(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
+      <Modal
+        open={open()}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 400,
+            bgcolor: "#292727",
+            border: "2px solid #000",
+            boxShadow: "24px",
+            p: 4,
+          }}
+        >
+          <img src="qr_link.png" alt="alert" style={{ width: "100%" }} />
+        </Box>
+      </Modal>
+
       <StyledAppBar position="static">
         <Toolbar>
           <IconButton
@@ -58,6 +87,7 @@ function Header() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={handleOpen}
           >
             <MenuIcon />
           </IconButton>

@@ -68,14 +68,14 @@ function Header() {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 400,
+            width: 200,
             bgcolor: "#292727",
             border: "2px solid #000",
             boxShadow: "24px",
             p: 4,
           }}
         >
-          <p>Share link github page for mobile.</p>
+          <p style={{ color: "white" }}>Share link github page for mobile.</p>
           <img src="qr_link.png" alt="alert" style={{ width: "100%" }} />
         </Box>
       </Modal>

@@ -75,6 +75,7 @@ function Header() {
             p: 4,
           }}
         >
+          <p>Share link github page for mobile.</p>
           <img src="qr_link.png" alt="alert" style={{ width: "100%" }} />
         </Box>
       </Modal>

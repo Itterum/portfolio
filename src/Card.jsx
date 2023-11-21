@@ -1,9 +1,5 @@
 import { createSignal } from "solid-js";
 import styled from "@suid/system/styled";
-// import {
-//   Card,
-//   CardContent,
-// } from "@suid/material";
 
 const CardContainer = styled("div")({
   position: "fixed",
@@ -33,8 +29,8 @@ const CardContent = styled("div")({
 const CustomCard = ({ title, content }) => {
   const [isCardVisible, setCardVisible] = createSignal(false);
 
-  const toggleCardVisibility = () => {
-  };
+  // const toggleCardVisibility = () => {
+  // };
 
   const handleMouseEnter = () => {
     setCardVisible(true);

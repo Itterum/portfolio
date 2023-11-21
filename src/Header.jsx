@@ -21,6 +21,9 @@ const SearchContainer = styled("div")({
   width: "800px",
   height: "25px",
   position: "relative",
+  '@media screen and (max-width: 700px)': {
+    width: "30%",
+  },
 });
 
 const MyComponent = styled("input")({
@@ -29,13 +32,15 @@ const MyComponent = styled("input")({
   outline: 0,
   border: 0,
   width: "100%",
-  marginRight: "40px", // Добавляем отступ справа для кнопки поиска
+  // marginRight: "40px",
 });
 
 const SearchButton = styled(IconButton)({
   position: "absolute",
   right: 0,
-  color: "black", // Устанавливаем цвет кнопки поиска
+  top: "50%",
+  transform: "translateY(-50%)",
+  color: "black",
 });
 
 const StyledAppBar = styled(AppBar)({

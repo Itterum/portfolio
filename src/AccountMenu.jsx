@@ -98,7 +98,7 @@ export default function AccountMenu() {
         }}
       >
         <MenuItem>
-          <Avatar /> Profile
+          <Avatar src="avatar.svg"/> Profile
         </MenuItem>
         <Divider />
         <MenuItem>

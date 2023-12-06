@@ -9,13 +9,14 @@ const CardContainer = styled("div")({
   display: "flex",
   justifyContent: "center",
   alignItems: "flex-end",
-  paddingBottom: "20px",
+  paddingBottom: "300px",
 });
 
 const CardWrapper = styled("div")({
   backgroundColor: "white",
   borderRadius: "44px",
   width: "600px",
+  height: "400px",
   margin: "0 30px",
   boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
   cursor: "pointer",
@@ -28,9 +29,6 @@ const CardContent = styled("div")({
 
 const CustomCard = ({ title, content }) => {
   const [isCardVisible, setCardVisible] = createSignal(false);
-
-  // const toggleCardVisibility = () => {
-  // };
 
   const handleMouseEnter = () => {
     setCardVisible(true);

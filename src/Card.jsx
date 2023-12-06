@@ -9,7 +9,7 @@ const CardContainer = styled("div")({
   display: "flex",
   justifyContent: "center",
   alignItems: "flex-end",
-  paddingBottom: "300px",
+  paddingBottom: "30px",
 });
 
 const CardWrapper = styled("div")({
